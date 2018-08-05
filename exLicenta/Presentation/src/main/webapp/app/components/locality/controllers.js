@@ -17,7 +17,6 @@ angular.module('traducatori.controllers')
 	    	 console.log($scope.localitys);
 	    	 $scope.len = $scope.localitys.length;
 	    },function(data, status, headers, config) {
-	    	window.location.href = "/itroAdmin/#!/login";
 	    	requestError($scope.error, data.data, data.status);
 	    });
         
@@ -115,7 +114,8 @@ angular.module('traducatori.controllers')
 //
 //        console.log($scope.localitys[$scope.id]);
         $scope.resetData = function() {
-            angular.copy(localitys_copy, $scope.localitys);
+		console.log('reset edit',$scope.locality, locality_copy);
+            angular.copy(locality_copy, $scope.locality);
         };
 
         $scope.submit = function() {
@@ -163,10 +163,11 @@ angular.module('traducatori.controllers')
     	    });
         }
         var locality_copy = {};
-        angular.copy($scope.locality, locality_copy);
+
+        angular.copy($scope.locality, localitys_copy);
 
         $scope.resetData = function() {
-            angular.copy(locality_copy, $scope.locality);
+            angular.copy(localitys_copy, $scope.locality);
         };
 
         $scope.submit = function() {

@@ -11,7 +11,6 @@ angular.module('traducatori.controllers')
 	    	 $scope.countrys = data.data;
 	    	 $scope.len = $scope.countrys.length;
 	    },function(data, status, headers, config) {
-	    	window.location.href = "/itroAdmin/#!/login";
 	    	requestError($scope.error, data.data, data.status);
 	    });
         $scope.taraFilter = "";
@@ -86,10 +85,10 @@ angular.module('traducatori.controllers')
         $scope.country = {};
         var countrys_copy = [];
         
-        angular.copy($scope.countrys, countrys_copy);
-
+        angular.copy($scope.country, countrys_copy);
+	// everywhere around here, at copy both, with s at country scope
         $scope.resetData = function() {
-            angular.copy(countrys_copy, $scope.countrys);
+            angular.copy(countrys_copy, $scope.country);
         };
 
         $scope.submit = function() {

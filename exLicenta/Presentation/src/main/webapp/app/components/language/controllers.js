@@ -11,7 +11,6 @@ angular.module('traducatori.controllers')
             $scope.languages = data.data;
             $scope.len = $scope.languages.length;
         },function(data, status, headers, config) {
-        	window.location.href = "/itroAdmin/#!/login";
             requestError($scope.error, data.data, data.status);
         });
         $scope.limbaFilter = "";

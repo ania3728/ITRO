@@ -12,7 +12,6 @@ angular.module('traducatori.controllers')
         	 console.log("...............response: " , data );
         	 console.log("...............users: " , $scope.users, " --- ",  data.data );
         },function(data, status, headers, config) {
-        	window.location.href = "/itroAdmin/#!/login";
         	console.log("...............users wrong ");
         });
 

@@ -11,7 +11,6 @@ angular.module('traducatori.controllers')
 	    	 $scope.countys = data.data;
 	    	 $scope.len = $scope.countys.length;
 	    },function(data, status, headers, config) {
-	    	window.location.href = "/itroAdmin/#!/login";
 	    	requestError($scope.error, data.data, data.status);
 	    });
     })
@@ -45,6 +44,11 @@ angular.module('traducatori.controllers')
 	    },function(data, status, headers, config) {
 	    	requestError($scope.error, data.data, data.status);
 	    });
+
+	// here for the back function
+	$scope.goBack = function () {
+             window.history.back();
+         };
     	
     	$scope.error = {};
     	var county_copy = {};
@@ -83,6 +87,10 @@ angular.module('traducatori.controllers')
     })
     .controller('insertCountyCtrl', function($scope, $state, $http) {
 
+	// here for the back function
+	$scope.goBack = function () {
+             window.history.back();
+         };
     	$http({
             method : 'GET',
             url : 'rest/tara/tari'

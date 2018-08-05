@@ -10,7 +10,6 @@ angular.module('traducatori.controllers')
 	    	 $scope.len = $scope.authors.length;
 	    	 console.log("autori", data.data);
 	    },function(data, status, headers, config) {
-	    	window.location.href = "/itroAdmin/#!/login";
 	    	requestError($scope.error, data.data, data.status);
 	    });
     })
@@ -84,10 +83,10 @@ angular.module('traducatori.controllers')
         $scope.author = {};
         var authors_copy = [];
         
-        angular.copy($scope.authors, authors_copy);
+        angular.copy($scope.author, authors_copy);
 
         $scope.resetData = function() {
-            angular.copy(authors_copy, $scope.authors);
+            angular.copy(authors_copy, $scope.author);
         };
 
         $scope.submit = function() {
